@@ -1,0 +1,24 @@
+@use './variables.module.scss' as *;
+@use './mixins.module.scss' as *;
+
+.buttons {
+  width: 100%;
+}
+
+.button {
+  @include clear-button;
+  &--contact {
+    @extend .button;
+    @include heading-style(6rem);
+    &.hover,
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: var(--accent-color);
+    }
+  }
+  &--clear {
+    @include clear-button;
+    padding: 0;
+  }
+}

@@ -1,0 +1,160 @@
+@use './variables.module.scss' as *;
+@use 'sass:math';
+// Breakpoints
+@mixin mobile-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin big-desktop-up {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// Styleguide
+@mixin heading-style($size: var(--h1-font-size)) {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.3em;
+  font-size: $size;
+  margin-bottom: var(--spacing-24);
+  margin-top: 0;
+  color: var(--secondary-color);
+}
+
+// Utility
+
+@mixin image-cover() {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  img {
+    display: none;
+  }
+}
+
+@mixin clear-list() {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clear-button {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  width: auto;
+  height: auto;
+  padding: 0;
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+  text-align: center;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  transition: all var(--base-duration) var(--base-timing);
+  font-weight: 500;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 17px 8px 15px;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+  &:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+@mixin flex($justify: center, $align: center, $dir: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin display-value($var) {
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: $var;
+  }
+}
+
+@mixin fake-input-text {
+  font-size: 14px;
+  font-family: $base-font-family;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+@mixin focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+@mixin fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin absolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin aspect-ratio($ratio1: 16, $ratio2: 9) {
+  &:before {
+    content: '';
+    width: 1px;
+    margin-left: -1px;
+    float: left;
+    height: 0;
+    padding-top: math.div(100%, math.div($ratio1, $ratio2));
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

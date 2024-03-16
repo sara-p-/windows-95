@@ -1,0 +1,59 @@
+@use './variables.module.scss' as *;
+@use './mixins.module.scss' as *;
+
+.icon {
+  &:after {
+    display: inline-block;
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    color: var(--secondary-color);
+  }
+  &--circle {
+    @extend .icon;
+    &:after {
+      content: '\f111';
+      font-size: 0.5rem;
+      // padding-left: var(--spacing-8);
+    }
+  }
+  &--check {
+    @extend .icon;
+    &:after {
+      content: '\f00c';
+      // padding-left: var(--spacing-8);
+    }
+  }
+  &--arrow-long-right {
+    @extend .icon;
+    &:after {
+      content: '\f178';
+      padding-left: var(--spacing-8);
+    }
+  }
+  &--login {
+    @extend .icon;
+    &:after {
+      content: '\f090';
+    }
+  }
+  &--logout {
+    @extend .icon;
+    &:after {
+      content: '\f08b';
+    }
+  }
+  &--chevron-right {
+    @extend .icon;
+    &:after {
+      content: '\f054';
+    }
+  }
+  &--chevron-down {
+    @extend .icon;
+    &:after {
+      content: '\f078';
+    }
+  }
+}
