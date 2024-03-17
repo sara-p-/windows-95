@@ -10,15 +10,15 @@ html {
   @include desktop-up {
     font-size: var(--base-font-size);
   }
+  font-family: var(--base-font-family);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+  color: var(--primary-color);
+  -webkit-font-smoothing: antialiased;
 }
 p,
 .p,
 p span {
-  font-family: var(--base-font-family);
-  font-weight: var(--base-font-weight);
-  line-height: var(--base-line-height);
-  color: var(--secondary-color);
-  -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -28,6 +28,9 @@ p {
 h1,
 .h1 {
   @include heading-style(var(--h1-font-size));
+  &--large {
+    @include heading-style(8rem);
+  }
 }
 
 h2,
@@ -66,8 +69,9 @@ h6,
   }
 }
 
+a,
 .link {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: underline;
   &:hover,
   &:focus {
@@ -92,5 +96,26 @@ h6,
         text-align: right;
       }
     }
+  }
+}
+
+.gradient {
+  // $self: &;
+  // @include absolute;
+  // &__wrapper {
+  //   position: relative;
+  //   @include flex;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  &__text {
+    background: var(--background-vaporwave1);
+    background-clip: text;
+    color: transparent;
+
+    // color: #57c6c7;
+    // text-shadow: -5px 0 var(--black-light), 0 5px var(--black-light),
+    //   5px 0 var(--black-light), 0 -5px var(--black-light);
+    // text-stroke: 2px var(--black-light);
   }
 }

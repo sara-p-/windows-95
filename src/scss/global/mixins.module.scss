@@ -36,7 +36,7 @@
   font-size: $size;
   margin-bottom: var(--spacing-24);
   margin-top: 0;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 // Utility
@@ -70,7 +70,7 @@
   line-height: var(--base-line-height);
   background: transparent;
   border: none;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-align: center;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
@@ -89,8 +89,8 @@
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: transparent;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
   }
   &:focus {
     outline: var(--focus-outline);

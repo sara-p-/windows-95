@@ -8,7 +8,7 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-    color: var(--secondary-color);
+    color: var(--primary-color);
   }
   &--circle {
     @extend .icon;

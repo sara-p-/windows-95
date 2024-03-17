@@ -1,18 +1,29 @@
 @use 'sass:math';
 @use 'sass:color';
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root,
 [data-theme='default'] {
   // Colors
   --white: #ffffff;
   --black: #1f1f1f;
+  --black-light: #404040;
   --orange-red-crayola: hsla(0, 100%, 68%, 1);
   --slate-blue: hsla(240, 50%, 56%, 1);
+  --yellow-gold: #e5c913;
+
+  // gradients
+  --background-vaporwave1: linear-gradient(
+    180deg,
+    hsla(187, 83%, 65%, 1) 0%,
+    hsla(301, 84%, 81%, 1) 50%,
+    hsla(347, 75%, 61%, 1) 100%
+  );
+  --background-vaporwave2: linear-gradient(180deg, #00dbde 0%, #fc00ff 100%);
 
   // Fonts
-  --base-font-family: 'Nunito Sans', sans-serif;
-  --heading-font-family: 'Jost', sans-serif;
+  --base-font-family: 'Gajraj One', sans-serif;
+  --heading-font-family: 'Gajraj One', sans-serif;
 
   // Font Size
   --base-font-size: 16px;
@@ -49,6 +60,9 @@
   --spacing-64: 4rem;
   --spacing-120: 7.5rem;
 
+  // Border
+  --base-border: 5px solid var(--primary-color);
+
   // Box Shadow
   --box-shadow: 0px 0px 13px 6px rgba(54, 54, 54, 0.71);
   --box-shadow-inset: inset 0px 0px 13px 6px rgba(54, 54, 54, 0.71);
@@ -63,16 +77,13 @@
   --base-timing: ease-in-out;
 
   // Theme
-  --primary-color: var(--white);
-  --secondary-color: var(--black);
+  --primary-color: var(--black-light);
+  --secondary-color: var(--white);
   --accent-color: var(--orange-red-crayola);
 }
 
 [data-theme='alt'] {
 }
-
-// Border
-$base-border: 3px solid var(--secondary-color);
 
 // Layout Modifier Sizes (see layout.module.scss)
 $sizes: 8px, 16px, 24px, 32px, 48px, 64px, 120px, 160px, 200px;
