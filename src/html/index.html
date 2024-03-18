@@ -7,30 +7,43 @@
     <script type="module" src="../js/index.js"></script>
   </head>
   <body>
-    <main>
-      <div class="frame">
-        <div class="frame__outer">
-          <div class="frame__inner"></div>
-        </div>
+    <!-- <div id="frame" class="frame">
+      <div class="frame__outer">
+        <div class="frame__inner"></div>
       </div>
-      <section class="section--fullscreen">
-        <div class="section__wrapper">
-          <div class="section__row">
-            <div class="section__col">
-              <h1 class="gradient__text back text-align--center h1--large">
-                Hello World
-              </h1>
-              <!-- <div class="gradient">
-                <div class="gradient__wrapper">
-                  <div class="gradient__text screen"></div>
-                  <h1 class="gradient__text front text-align--center h1--large">
-                    Hello World
-                  </h1>
-                </div>
-              </div> -->
+    </div> -->
+
+    <main>
+      <div id="title-section" class="section fullscreen--double">
+        <div id="vaporwave-text" class="vaporwave-text">
+          <div class="vaporwave-text__wrapper">
+            <div class="mask mask--1">
+              <img
+                class="vaporwave-text__image"
+                src="../../images/title-background3.svg"
+                alt="view of palm trees from below looking up."
+              />
             </div>
           </div>
         </div>
+
+        <section id="section--1" class="section fullscreen">
+          <div class="section__wrapper">
+            <div class="section__row">
+              <div class="section__col">
+                <h1 class="visually-hidden text-align--center h1--large">
+                  Vaporwave
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="section--2" class="section--fullscreen">
+          <div class="section__wrapper"></div>
+        </section>
+      </div>
+      <section id="section--3" class="section--fullscreen">
+        <div class="section__wrapper"></div>
       </section>
     </main>
   </body>

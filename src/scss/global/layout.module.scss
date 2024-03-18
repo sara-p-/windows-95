@@ -16,25 +16,33 @@ html {
 
 html,
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-image: var(--background-vaporwave2);
+  background-image: var(--gradient-vaporwave2);
   background-size: cover;
   background-repeat: no-repeat;
+  // background-image: url(../../images/title-background3.svg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-attachment: fixed;
 }
 
 .main {
   position: relative;
+  z-index: 0;
 }
 
 .section {
   $self: &;
   position: relative;
   width: 100%;
+  z-index: 3;
   &--fullscreen {
+    // border-bottom: 5px solid var(--black-light);
     height: 100vh;
+    width: 100%;
     #{$self}__wrapper,
     #{$self}__row {
       height: 100%;
@@ -46,46 +54,14 @@ body {
     margin: auto;
     padding: 0 32px;
   }
-  &__row {
-    width: 100%;
-    @include flex;
-  }
-  &__col {
-    flex: 1;
-    padding: 0 var(--spacing-24);
-    &--flex {
-      height: 100%;
-      @include flex;
-    }
-  }
-  // &__content {
-  //   max-width: 500px;
-  //   margin: auto;
-  // }
 }
 
-.frame {
-  position: fixed;
+.fullscreen {
+  // border-bottom: 5px solid var(--black-light);
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: block;
-  pointer-events: none;
-  z-index: -1;
-  &__outer {
-    width: auto;
+  .wrapper {
     height: 100%;
-    position: relative;
-    display: block;
-    border: 2rem solid #5e60ce;
-  }
-  &__inner {
-    // background-image: var(--background-vaporwave1);
-    width: 100%;
-    height: 100%;
-    border: 1rem solid #7400b8;
-    // box-shadow: var(--box-shadow);
   }
 }
 
@@ -93,12 +69,6 @@ body {
 .footer {
   &__wrapper {
     @extend .section__wrapper;
-  }
-  &__row {
-    @extend .section__row;
-  }
-  &__col {
-    @extend .section__col;
   }
 }
 

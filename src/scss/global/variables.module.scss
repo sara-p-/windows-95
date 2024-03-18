@@ -11,18 +11,30 @@
   --orange-red-crayola: hsla(0, 100%, 68%, 1);
   --slate-blue: hsla(240, 50%, 56%, 1);
   --yellow-gold: #e5c913;
+  --yellow: #f7c418;
+  --red-orange: #fe1c03;
+  --orange: #fb700e;
+  --neon-green: #6cffb9;
+  --purple: #7400b8;
 
   // gradients
-  --background-vaporwave1: linear-gradient(
+  --gradient-vaporwave1: linear-gradient(
     180deg,
     hsla(187, 83%, 65%, 1) 0%,
     hsla(301, 84%, 81%, 1) 50%,
     hsla(347, 75%, 61%, 1) 100%
   );
-  --background-vaporwave2: linear-gradient(180deg, #00dbde 0%, #fc00ff 100%);
+  --gradient-vaporwave1-hex: linear-gradient(
+    180deg,
+    hsla(187, 83%, 65%, 1) 0%,
+    hsla(301, 84%, 81%, 1) 50%,
+    hsla(347, 75%, 61%, 1) 100%
+  );
+  --gradient-vaporwave2: linear-gradient(180deg, #00dbde 0%, #fc00ff 100%);
+  --gradient-yellow: linear-gradient(180deg, #fffc00, #ffffff, #fffc00);
 
   // Fonts
-  --base-font-family: 'Gajraj One', sans-serif;
+  --base-font-family: 'Saira', sans-serif;
   --heading-font-family: 'Gajraj One', sans-serif;
 
   // Font Size

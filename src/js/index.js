@@ -1,1 +1,3 @@
-console.log('Hello World')
+import titleAnimation from './modules/title-animation'
+
+titleAnimation()
