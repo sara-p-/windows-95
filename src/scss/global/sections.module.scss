@@ -25,6 +25,14 @@
     left: 0;
   }
 }
+.title-mask {
+  width: 100%;
+  height: 100%;
+  mask-image: url(../../images/vaporwave-title1.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--black-light);
+}
 
 #section--1 {
 }
@@ -52,4 +60,91 @@
 
 #section--4 {
   background-color: var(--black);
+  position: relative;
+  height: 100vh;
+  .sun-wrapper {
+    width: 100%;
+    height: 100vh;
+    @include flex;
+    position: relative;
+    .sun {
+      width: 25%;
+      height: auto;
+    }
+  }
+  .mountains {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--black);
+    border-top: 5px solid var(--purple);
+    &::after {
+      background-color: var(--black);
+      content: '';
+      @include absolute;
+    }
+    .mountains-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .mountain {
+      position: absolute;
+      height: auto;
+      width: 45%;
+      bottom: 80%;
+    }
+    .back-left {
+      left: -5%;
+    }
+    .back-right {
+      right: -5%;
+    }
+  }
+  .sunset-grid {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: -3px;
+    bottom: 0;
+    background-image: url(../../images/road-stripe--purple.svg);
+    background-size: 50px;
+    background-repeat: repeat;
+    background-color: var(--black);
+    // border-top: 3px solid var(--purple);
+    // border-bottom: 3px solid var(--purple);
+  }
+  .road {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: -3px;
+    bottom: 0;
+    background-color: var(--black);
+    // background-image: url(../../images/road-line--purple.svg);
+    // background-size: 50px;
+    // background-repeat: repeat;
+    mask-image: url(../../images/mask--road.svg);
+    mask-repeat: no-repeat;
+    mask-size: 63%;
+
+    mask-position: center;
+  }
+  .road-outline {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: -3px;
+    bottom: 0;
+    mask-image: url(../../images/square--black.svg);
+    // mask-size: 50px;
+    mask-repeat: repeat;
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

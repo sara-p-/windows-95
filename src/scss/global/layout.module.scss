@@ -64,10 +64,15 @@ body {
   width: 100%;
   max-width: var(--site-width-l);
   margin: auto;
-  background: var(--mauve);
+  background: var(--black);
   padding: var(--spacing-xl);
   border-radius: 60px;
   border: 10px solid var(--pink);
+  p,
+  h1,
+  h2 {
+    color: var(--white);
+  }
 }
 
 .visually-hidden,
