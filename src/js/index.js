@@ -1,3 +1,3 @@
-import titleAnimation from './modules/title-animation'
+import animations from './modules/animations'
 
-titleAnimation()
+animations()

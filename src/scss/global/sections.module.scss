@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
   &__wrapper {
@@ -50,21 +50,15 @@
 }
 
 #section--3 {
-  // background-image: url(../../images/background-grid--neon-green.svg);
-  // background-size: 100px;
-  // background-repeat: repeat;
-  // background-attachment: fixed;
-  // border-bottom: 5px solid var(--neon-green);
-  // background-color: var(--purple);
 }
 
 #section--4 {
   background-color: var(--black);
-  position: relative;
-  height: 100vh;
+  // position: relative;
+  // height: 100%;
   .sun-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     @include flex;
     position: relative;
     .sun {
@@ -74,7 +68,7 @@
   }
   .mountains {
     position: absolute;
-    height: 40%;
+    height: 30%;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -106,12 +100,13 @@
   .sunset-grid {
     position: absolute;
     width: 100%;
-    height: 40%;
+    height: 30%;
     left: -3px;
     bottom: 0;
-    background-image: url(../../images/road-stripe--purple.svg);
-    background-size: 50px;
-    background-repeat: repeat;
+    background-image: url(../../images/ground-lines.svg);
+    background-size: 105%;
+    background-position: top center;
+    background-repeat: no-repeat;
     background-color: var(--black);
     // border-top: 3px solid var(--purple);
     // border-bottom: 3px solid var(--purple);
@@ -129,8 +124,29 @@
     mask-image: url(../../images/mask--road.svg);
     mask-repeat: no-repeat;
     mask-size: 63%;
-
     mask-position: center;
+    .road-wrapper {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    .road-stripes {
+      position: absolute;
+      height: 200%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(../../images/road-line-background.svg);
+      background-size: 50px;
+      background-repeat: repeat;
+    }
+    // img {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    // }
   }
   .road-outline {
     position: absolute;

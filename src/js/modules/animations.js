@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 // import simpleParallax from 'simple-parallax-js'
 
-export default function titleAnimation() {
+export default function animations() {
   // variables
   const bgImage = document.querySelector('img.vaporwave-text__image')
   const roadBackground = document.querySelector('img.road--stripe-background')
