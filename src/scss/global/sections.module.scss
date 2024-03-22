@@ -61,8 +61,11 @@
     height: 100%;
     @include flex;
     position: relative;
+    mask-image: url(../../images/square--black.svg);
+    mask-repeat: repeat;
+    mask-size: 50px;
     .sun {
-      width: 25%;
+      width: 20%;
       height: auto;
     }
   }
@@ -114,17 +117,12 @@
   .road {
     position: absolute;
     width: 100%;
-    height: 40%;
+    height: 30%;
     left: -3px;
     bottom: 0;
-    background-color: var(--black);
-    // background-image: url(../../images/road-line--purple.svg);
-    // background-size: 50px;
-    // background-repeat: repeat;
-    mask-image: url(../../images/mask--road.svg);
-    mask-repeat: no-repeat;
-    mask-size: 63%;
-    mask-position: center;
+    mask-image: url(../../images/square--black.svg);
+    mask-repeat: repeat;
+    mask-size: 50px;
     .road-wrapper {
       position: relative;
       height: 100%;
@@ -141,26 +139,6 @@
       background-image: url(../../images/road-line-background.svg);
       background-size: 50px;
       background-repeat: repeat;
-    }
-    // img {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    // }
-  }
-  .road-outline {
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    left: -3px;
-    bottom: 0;
-    mask-image: url(../../images/square--black.svg);
-    // mask-size: 50px;
-    mask-repeat: repeat;
-    &-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
     }
   }
 }
