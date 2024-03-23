@@ -1,6 +1,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 // import simpleParallax from 'simple-parallax-js'
 
 export default function animations() {
@@ -16,15 +17,22 @@ export default function animations() {
   const titleSection = document.querySelector('#title-section')
   const section4 = document.getElementById('section--4')
 
-  // Text Background Movement
-  gsap.from(bgImage, {
-    scrollTrigger: {
-      trigger: body,
-      scrub: 1,
-    },
-    yPercent: -25,
-    ease: 'none',
+  // Smooth Scrolling
+  ScrollSmoother.create({
+    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+    // effects: true, // looks for data-speed and data-lag attributes on elements
+    // smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   })
+
+  // Text Background Movement
+  // gsap.from(bgImage, {
+  //   scrollTrigger: {
+  //     trigger: body,
+  //     scrub: 1,
+  //   },
+  //   yPercent: -25,
+  //   ease: 'none',
+  // })
   // Sunset ground movement
   gsap.from(roadBackground, {
     scrollTrigger: {
@@ -34,7 +42,6 @@ export default function animations() {
     yPercent: -60,
     ease: 'none',
   })
-
   // Sun movement
   gsap.to(sun, {
     scrollTrigger: {
