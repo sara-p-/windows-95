@@ -41,31 +41,29 @@
 }
 
 #wiki-section {
-  // background-color: rgba($color: #000000, $alpha: 0.5);
-  background-image: url(../../images/checkerboard.svg);
+  // background-image: url(../../images/checkerboard.svg);
   background-size: 250px;
   background-repeat: repeat;
-  min-height: 100vh;
-  border: 7px solid var(--black);
-  .modal {
-    &__box {
-      @include absolute;
-    }
+  width: 100%;
+  height: auto;
+  // border: 7px solid var(--black);
+  position: relative;
+  padding: var(--spacing-xxxl) 0;
+  .wiki {
     &__wrapper {
-      width: 100%;
-      height: 100%;
       @include flex;
-      padding: var(--spacing-xxl) var(--spacing-l);
-      max-width: var(--site-width-xl);
-      margin: auto;
+      width: 100%;
+      padding: 0 var(--spacing-m);
+      position: relative;
     }
-    &__modal {
+    &__box {
       width: 100%;
       max-width: var(--site-width-m);
       margin: auto;
       background: var(--white);
       border: 3px solid var(--grey-dark);
       box-shadow: var(--box-shadow2);
+      z-index: 3;
     }
     &__header {
       background-color: var(--grey);
@@ -88,7 +86,65 @@
     &__content {
       padding: var(--spacing-l) var(--spacing-m);
     }
+    &--1,
+    &--2 {
+      position: absolute;
+      left: -30px;
+      right: 0;
+      top: -30px;
+      // bottom: 0;
+      margin: auto;
+      z-index: 2;
+    }
+    &__1 {
+      z-index: 1;
+      left: -60px;
+      top: -60px;
+    }
   }
+
+  // .modal {
+  //   &__box {
+  //     @include absolute;
+  //   }
+  //   &__wrapper {
+  //     width: 100%;
+  //     height: 100%;
+  //     @include flex;
+  //     padding: var(--spacing-xxl) var(--spacing-l);
+  //     max-width: var(--site-width-xl);
+  //     margin: auto;
+  //   }
+  //   &__modal {
+  //     width: 100%;
+  //     max-width: var(--site-width-m);
+  //     margin: auto;
+  //     background: var(--white);
+  //     border: 3px solid var(--grey-dark);
+  //     box-shadow: var(--box-shadow2);
+  //   }
+  //   &__header {
+  //     background-color: var(--grey);
+  //     @include flex($justify: space-between);
+  //     padding: 6px 8px;
+  //   }
+  //   &__title {
+  //     font-size: var(--h6-font-size);
+  //     margin-bottom: 0;
+  //     line-height: 1;
+  //   }
+  //   &__name {
+  //     font-size: var(--h6-font-size);
+  //     margin-bottom: 0;
+  //     line-height: 1;
+  //   }
+  //   &__button {
+  //     line-height: 1;
+  //   }
+  //   &__content {
+  //     padding: var(--spacing-l) var(--spacing-m);
+  //   }
+  // }
   .palm {
     height: 80%;
     width: auto;
