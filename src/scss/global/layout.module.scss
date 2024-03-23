@@ -17,12 +17,13 @@ html {
 html,
 body {
   height: auto;
-  width: 100%;
+  width: auto;
   margin: 0;
   padding: 0;
   background-image: var(--gradient-vaporwave2);
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 .main {
@@ -46,8 +47,12 @@ body {
 .wrapper {
   width: 100%;
   max-width: var(--site-width-xl);
-  padding: var(--spacing-xxxl) var(--spacing-m);
+  // padding: var(--spacing-xxxl) var(--spacing-m);
+  padding: var(--spacing-xxxl) 24px;
+  @include tablet-landscape-up {
+  }
   &:has(.content) {
+    @extend .wrapper;
     display: block;
     @include tablet-portrait-up {
       @include flex;
@@ -60,9 +65,13 @@ body {
   max-width: var(--site-width-l);
   margin: auto;
   background: var(--black);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-m);
   border-radius: 60px;
-  border: 10px solid var(--pink);
+  border: 5px solid var(--pink);
+  @include tablet-landscape-up {
+    padding: var(--spacing-xl);
+    border: 10px solid var(--pink);
+  }
   p,
   h1,
   h2 {
@@ -78,89 +87,4 @@ body {
   width: 0;
   height: 0;
   opacity: 0;
-}
-
-// ********************* FLEXBOX ********************** //
-.flex {
-  display: block;
-  @include tablet-portrait-up {
-    @include flex;
-  }
-  &--row-reverse {
-    @extend .flex;
-    @include tablet-portrait-up {
-      @include flex($dir: row-reverse);
-    }
-  }
-  &--col {
-    @extend .flex;
-    @include tablet-portrait-up {
-      @include flex($dir: column);
-    }
-  }
-  &--col-reverse {
-    @extend .flex;
-    @include tablet-portrait-up {
-      @include flex($dir: column-reverse);
-    }
-  }
-  &--space-between {
-    @extend .flex;
-    @include tablet-portrait-up {
-      @include flex($justify: space-between);
-    }
-  }
-  &--align-top {
-    @extend .flex;
-    @include tablet-portrait-up {
-      @include flex($align: flex-start);
-    }
-  }
-}
-
-// ********************* GRID ********************** //
-// .grid {
-//   @for $i from 1 through 5 {
-//     &--#{$grid-space * $i} {
-//       grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//       grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//     }
-//   }
-//   &--column {
-//     grid-auto-flow: column;
-//   }
-// }
-
-// ********************* LAYOUT MODIFIERS ********************** //
-.padding {
-  @each $position in $positions {
-    &--#{$position} {
-      @each $size in $sizes {
-        &-#{$size} {
-          padding-#{$position}: $size;
-        }
-      }
-    }
-  }
-}
-.margin {
-  @each $position in $positions {
-    &--#{$position} {
-      @each $size in $sizes {
-        &-#{$size} {
-          margin-#{$position}: $size;
-        }
-      }
-    }
-  }
-}
-
-// ********************* Screen Reader Only ********************** //
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }

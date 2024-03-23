@@ -5,18 +5,21 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function animations() {
   // variables
+  const body = document.getElementById('body')
   const bgImage = document.querySelector('img.vaporwave-text__image')
   const roadBackground = document.querySelector('.road-stripes')
   const sun = document.querySelector('.sun')
   const mountainLeft = document.querySelector('.mountain.back-left')
   const mountainRight = document.querySelector('.mountain.back-right')
+  const mountainFrontLeft = document.querySelector('.mountain.front-left')
+  const mountainFrontRight = document.querySelector('.mountain.front-right')
   const titleSection = document.querySelector('#title-section')
   const section4 = document.getElementById('section--4')
 
-  // Background Movement
+  // Text Background Movement
   gsap.from(bgImage, {
     scrollTrigger: {
-      trigger: titleSection,
+      trigger: body,
       scrub: 1,
     },
     yPercent: -25,
@@ -31,13 +34,15 @@ export default function animations() {
     yPercent: -60,
     ease: 'none',
   })
+
   // Sun movement
   gsap.to(sun, {
     scrollTrigger: {
       trigger: section4,
+      end: 'bottom 60%',
       scrub: 1,
     },
-    yPercent: 50,
+    yPercent: 100,
     scale: 2,
     ease: 'none',
   })
@@ -48,7 +53,7 @@ export default function animations() {
       scrub: 1,
     },
     scale: 2,
-    xPercent: -20,
+    xPercent: -30,
     yPercent: -50,
     ease: 'none',
   })
@@ -59,16 +64,44 @@ export default function animations() {
       scrub: 1,
     },
     scale: 2,
-    xPercent: 25,
+    xPercent: 30,
+    yPercent: -50,
+    ease: 'none',
+  })
+  // mountain-front-left movement
+  gsap.to(mountainFrontLeft, {
+    scrollTrigger: {
+      trigger: section4,
+      scrub: 1,
+    },
+    scale: 2.5,
+    xPercent: -100,
+    yPercent: -50,
+    ease: 'none',
+  })
+  // mountain-right movement
+  gsap.to(mountainFrontRight, {
+    scrollTrigger: {
+      trigger: section4,
+      scrub: 1,
+    },
+    scale: 2.5,
+    xPercent: 100,
     yPercent: -50,
     ease: 'none',
   })
 
-  // new simpleParallax(bgImage, {
-  //   orientation: 'down',
-  //   overflow: true,
-  // })
-  // new simpleParallax(roadBackground, {
-  //   orientation: 'down',
-  // })
+  // Mobile animations
+  let mm = gsap.matchMedia()
+  mm.add('(min-width: 900px)', () => {
+    // Text Background Movement
+    gsap.from(bgImage, {
+      scrollTrigger: {
+        trigger: body,
+        scrub: 1,
+      },
+      yPercent: -10,
+      ease: 'none',
+    })
+  })
 }

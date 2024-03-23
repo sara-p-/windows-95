@@ -12,17 +12,23 @@
   &__wrapper {
     width: 100%;
     max-width: var(--site-width-xl);
-    padding: 6rem;
+    padding: 1rem;
     height: 100%;
     margin: auto;
+    @include tablet-landscape-up {
+      padding: 6rem;
+    }
   }
   &__image {
     opacity: 0.5;
     height: auto;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 0;
+    @include tablet-landscape-up {
+      top: 0;
+    }
   }
 }
 .title-mask {
@@ -32,6 +38,69 @@
   mask-repeat: no-repeat;
   mask-position: center;
   background-color: var(--black-light);
+}
+
+#wiki-section {
+  // background-color: rgba($color: #000000, $alpha: 0.5);
+  background-image: url(../../images/checkerboard.svg);
+  background-size: 250px;
+  background-repeat: repeat;
+  min-height: 100vh;
+  border: 7px solid var(--black);
+  .modal {
+    &__box {
+      @include absolute;
+    }
+    &__wrapper {
+      width: 100%;
+      height: 100%;
+      @include flex;
+      padding: var(--spacing-xxl) var(--spacing-l);
+      max-width: var(--site-width-xl);
+      margin: auto;
+    }
+    &__modal {
+      width: 100%;
+      max-width: var(--site-width-m);
+      margin: auto;
+      background: var(--white);
+      border: 3px solid var(--grey-dark);
+      box-shadow: var(--box-shadow2);
+    }
+    &__header {
+      background-color: var(--grey);
+      @include flex($justify: space-between);
+      padding: 6px 8px;
+    }
+    &__title {
+      font-size: var(--h6-font-size);
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    &__name {
+      font-size: var(--h6-font-size);
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    &__button {
+      line-height: 1;
+    }
+    &__content {
+      padding: var(--spacing-l) var(--spacing-m);
+    }
+  }
+  .palm {
+    height: 80%;
+    width: auto;
+    position: absolute;
+    top: 10%;
+    &-left {
+      left: 0;
+    }
+    &-right {
+      right: 0;
+    }
+  }
 }
 
 #section--1 {
@@ -53,13 +122,12 @@
 }
 
 #section--4 {
-  background-color: var(--black);
-  // position: relative;
-  // height: 100%;
+  // background-color: var(--black);
+
   .sun-wrapper {
     width: 100%;
     height: 100%;
-    @include flex;
+    // @include flex($align: flex-start);
     position: relative;
     mask-image: url(../../images/square--black.svg);
     mask-repeat: repeat;
@@ -67,21 +135,21 @@
     .sun {
       width: 20%;
       height: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10%;
+      margin: auto;
     }
   }
   .mountains {
     position: absolute;
-    height: 30%;
+    height: 50%;
     width: 100%;
     bottom: 0;
     left: 0;
     background-color: var(--black);
     border-top: 5px solid var(--purple);
-    &::after {
-      background-color: var(--black);
-      content: '';
-      @include absolute;
-    }
     .mountains-wrapper {
       width: 100%;
       height: 100%;
@@ -91,7 +159,10 @@
       position: absolute;
       height: auto;
       width: 45%;
-      bottom: 80%;
+      bottom: 90%;
+      @include tablet-landscape-up {
+        bottom: 80%;
+      }
     }
     .back-left {
       left: -5%;
@@ -103,21 +174,22 @@
   .sunset-grid {
     position: absolute;
     width: 100%;
-    height: 30%;
+    height: 50%;
     left: -3px;
     bottom: 0;
     background-image: url(../../images/ground-lines.svg);
-    background-size: 105%;
+    background-size: 200%;
     background-position: top center;
     background-repeat: no-repeat;
     background-color: var(--black);
-    // border-top: 3px solid var(--purple);
-    // border-bottom: 3px solid var(--purple);
+    @include tablet-landscape-up {
+      background-size: 105%;
+    }
   }
   .road {
     position: absolute;
     width: 100%;
-    height: 30%;
+    height: 50%;
     left: -3px;
     bottom: 0;
     mask-image: url(../../images/square--black.svg);
@@ -139,6 +211,33 @@
       background-image: url(../../images/road-line-background.svg);
       background-size: 50px;
       background-repeat: repeat;
+    }
+  }
+  .mountains-front {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    .mountains-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .mountain {
+      position: absolute;
+      height: auto;
+      width: 35%;
+      bottom: 80%;
+      @include tablet-landscape-up {
+        bottom: 60%;
+      }
+    }
+    .front-left {
+      left: -5%;
+    }
+    .front-right {
+      right: -5%;
     }
   }
 }

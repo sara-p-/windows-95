@@ -10,26 +10,11 @@
     font: var(--fa-font-solid);
     color: var(--primary-color);
   }
-  &--circle {
-    @extend .icon;
-    &:after {
-      content: '\f111';
-      font-size: 0.5rem;
-      // padding-left: var(--spacing-xs);
-    }
-  }
-  &--check {
-    @extend .icon;
-    &:after {
-      content: '\f00c';
-      // padding-left: var(--spacing-xs);
-    }
-  }
   &--arrow-long-right {
     @extend .icon;
     &:after {
       content: '\f178';
-      padding-left: var(--spacing-xs);
+      padding-left: var(--spacing-8);
     }
   }
   &--login {
@@ -54,6 +39,12 @@
     @extend .icon;
     &:after {
       content: '\f078';
+    }
+  }
+  &--times {
+    @extend .icon;
+    &:after {
+      content: '\f00d';
     }
   }
 }

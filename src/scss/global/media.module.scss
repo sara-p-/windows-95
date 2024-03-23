@@ -18,10 +18,3 @@ img {
     object-fit: cover;
   }
 }
-
-.logo__image {
-  max-width: 130px;
-  @include tablet-portrait-up {
-    max-width: 200px;
-  }
-}
