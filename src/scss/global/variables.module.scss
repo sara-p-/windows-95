@@ -34,7 +34,12 @@
     hsla(301, 84%, 81%, 1) 50%,
     hsla(347, 75%, 61%, 1) 100%
   );
-  --gradient-vaporwave2: linear-gradient(180deg, #00dbde 0%, #fc00ff 100%);
+  --gradient-vaporwave2: linear-gradient(
+    180deg,
+    #00dbde 0%,
+    #fc00ff 50%,
+    #00dbde 100%
+  );
   --gradient-vaporwave3: linear-gradient(
     0deg,
     #009aaa 0%,
@@ -42,6 +47,12 @@
     #842b8f 100%
   );
   --gradient-vaporwave4: linear-gradient(0deg, #842b8f 0%, #000000 100%);
+  --gradient-vaporwave5: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 100%
+  );
   --gradient-yellow: linear-gradient(180deg, #fffc00, #ffffff, #fffc00);
 
   // Fonts
@@ -100,15 +111,11 @@
   --base-duration-long: 1s;
   --base-timing: ease-in-out;
 
+  // Sunset scene
+  --sunset-horizon: 35%;
+
   // Theme
   --primary-color: var(--black);
   --secondary-color: var(--white);
   --accent-color: var(--orange-red-crayola);
 }
-
-[data-theme='alt'] {
-}
-
-// Layout Modifier Sizes (see layout.module.scss)
-$sizes: 8px, 16px, 24px, 32px, 48px, 64px, 120px, 160px, 200px;
-$positions: top, right, bottom, left;

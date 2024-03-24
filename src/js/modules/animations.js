@@ -16,30 +16,45 @@ export default function animations() {
   const mountainFrontRight = document.querySelector('.mountain.front-right')
   const titleSection = document.querySelector('#title-section')
   const section4 = document.getElementById('section--4')
+  const section5 = document.getElementById('section--5')
+  const maskScrollBox = document.getElementById('mask-scroll-box')
+  const stars = document.querySelector('.stars-image')
 
   // Smooth Scrolling
   ScrollSmoother.create({
     smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-    // effects: true, // looks for data-speed and data-lag attributes on elements
-    // smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    effects: true, // looks for data-speed and data-lag attributes on elements
+    smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   })
 
+  console.log('hello world')
+
   // Text Background Movement
-  // gsap.from(bgImage, {
-  //   scrollTrigger: {
-  //     trigger: body,
-  //     scrub: 1,
-  //   },
-  //   yPercent: -25,
-  //   ease: 'none',
-  // })
+  gsap.from(bgImage, {
+    scrollTrigger: {
+      trigger: maskScrollBox,
+      scrub: 1,
+    },
+    yPercent: -25,
+    ease: 'none',
+  })
+  // Stars movement
+  gsap.from(stars, {
+    scrollTrigger: {
+      trigger: section4,
+      scrub: 1,
+    },
+    rotate: -20,
+    // transformOrigin: '35% 45%',
+    ease: 'none',
+  })
   // Sunset ground movement
   gsap.from(roadBackground, {
     scrollTrigger: {
       trigger: section4,
       scrub: 1,
     },
-    yPercent: -60,
+    yPercent: -100,
     ease: 'none',
   })
   // Sun movement
@@ -49,30 +64,32 @@ export default function animations() {
       end: 'bottom 60%',
       scrub: 1,
     },
-    yPercent: 100,
+    yPercent: 50,
     scale: 2,
     ease: 'none',
   })
   // mountain-left movement
   gsap.to(mountainLeft, {
     scrollTrigger: {
-      trigger: section4,
+      trigger: section5,
       scrub: 1,
     },
-    scale: 2,
-    xPercent: -30,
-    yPercent: -50,
+    scale: 2.3,
+    xPercent: -40,
+    yPercent: -60,
     ease: 'none',
   })
+
   // mountain-right movement
   gsap.to(mountainRight, {
     scrollTrigger: {
-      trigger: section4,
+      trigger: section5,
+      start: 'top 90%',
       scrub: 1,
     },
-    scale: 2,
-    xPercent: 30,
-    yPercent: -50,
+    scale: 2.3,
+    xPercent: 40,
+    yPercent: -60,
     ease: 'none',
   })
   // mountain-front-left movement
@@ -99,16 +116,16 @@ export default function animations() {
   })
 
   // Mobile animations
-  let mm = gsap.matchMedia()
-  mm.add('(min-width: 900px)', () => {
-    // Text Background Movement
-    gsap.from(bgImage, {
-      scrollTrigger: {
-        trigger: body,
-        scrub: 1,
-      },
-      yPercent: -10,
-      ease: 'none',
-    })
-  })
+  // let mm = gsap.matchMedia()
+  // mm.add('(min-width: 900px)', () => {
+  //   // Text Background Movement
+  //   gsap.from(bgImage, {
+  //     scrollTrigger: {
+  //       trigger: body,
+  //       scrub: 1,
+  //     },
+  //     yPercent: -10,
+  //     ease: 'none',
+  //   })
+  // })
 }
