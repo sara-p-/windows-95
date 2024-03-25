@@ -20,6 +20,8 @@ export default function animations() {
   const maskScrollBox = document.getElementById('mask-scroll-box')
   const stars = document.querySelector('.stars__image')
   const miata = document.querySelector('.miata__image')
+  const wikis = document.querySelectorAll('.wiki-wiggle')
+  const wikiSection = document.getElementById('wiki-section')
 
   // Smooth Scrolling
   ScrollSmoother.create({
@@ -28,7 +30,7 @@ export default function animations() {
     smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   })
 
-  // Text Background Movement
+  // ****************** TITLE **************** //
   gsap.from(bgImage, {
     scrollTrigger: {
       trigger: maskScrollBox,
@@ -37,6 +39,26 @@ export default function animations() {
     yPercent: -25,
     ease: 'none',
   })
+
+  // *************** WIKI WIGGLE *************** //
+  // let t1 = gsap.timeline({
+  //   // yoyo: true,
+  //   repeat: 1,
+  //   scrollTrigger: {
+  //     trigger: wikiSection,
+  //     scrub: 1,
+  //   },
+  // })
+
+  // t1.to(wikis, {
+  //   stagger: 0.5,
+  //   scale: 1.1,
+  //   // xPercent: -2,
+  //   duration: 1,
+  //   transformOrigin: 'right bottom',
+  // })
+
+  // ***************** Sunset ******************* //
   // Stars movement
   gsap.from(stars, {
     scrollTrigger: {
@@ -115,18 +137,9 @@ export default function animations() {
     transformOrigin: 'left bottom',
     ease: 'none',
   })
-  // *********************** MIATA ********************* //
-  // gsap.to(miata, {
-  //   // scrollTrigger: {
-  //   //   trigger: section4,
-  //   //   scrub: 1,
-  //   // },
-  //   yPercent: 5,
-  //   duration: 1,
-  //   repeat: -1,
-  // })
 
-  let t1 = gsap.timeline({
+  // *********************** MIATA ********************* //
+  let t2 = gsap.timeline({
     yoyo: true,
     repeat: 10,
     repeatDelay: 1,
@@ -136,28 +149,8 @@ export default function animations() {
     },
   })
 
-  // // let t1 = gsap.timeline({ repeat: -1, repeatDelay: 1 })
-
-  t1.from(miata, {
-    // rotate: -5,
+  t2.from(miata, {
     yPercent: -10,
-    // ease: 'none',
     duration: 1,
   })
-
-  // t1.resume()
-
-  // Mobile animations
-  // let mm = gsap.matchMedia()
-  // mm.add('(min-width: 900px)', () => {
-  //   // Text Background Movement
-  //   gsap.from(bgImage, {
-  //     scrollTrigger: {
-  //       trigger: body,
-  //       scrub: 1,
-  //     },
-  //     yPercent: -10,
-  //     ease: 'none',
-  //   })
-  // })
 }
