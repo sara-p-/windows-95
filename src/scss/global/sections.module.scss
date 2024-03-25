@@ -118,54 +118,30 @@
 }
 
 #section--4 {
+  overflow: hidden;
   background-color: var(--black);
   .stars {
     @include absolute;
-    mask-image: url(../../images/square--black.svg);
-    mask-repeat: repeat;
-    mask-size: 50px;
-    &-wrapper {
+    overflow: hidden;
+    &__wrapper {
       width: 100%;
       height: 100%;
       position: relative;
       @include flex;
     }
-    &-background {
-      position: absolute;
-      // top: -75%;
-      // left: -75%;
-      top: -100%;
-      right: -100%;
-      bottom: -100%;
-      left: -100%;
-      width: 200%;
-      height: auto;
-      background-image: url(/images/stars.svg);
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    &-image {
+    &__image {
       width: 200%;
       height: 200%;
-      // position: absolute;
-      // top: -100%;
-      // left: -100%;
-      // bottom: 100%;
-      // right: -100%;
     }
   }
 
-  .sun-wrapper {
+  .sun {
     width: 100%;
     height: 100%;
-    // @include flex($align: flex-start);
     position: relative;
-    mask-image: url(../../images/square--black.svg);
-    mask-repeat: repeat;
-    mask-size: 50px;
-    .sun {
-      width: 25%;
+    overflow: hidden;
+    &__image {
+      width: 20%;
       height: auto;
       position: absolute;
       left: 0;
@@ -174,7 +150,7 @@
       margin: auto;
     }
   }
-  .mountains {
+  .mountains-back {
     position: absolute;
     height: var(--sunset-horizon);
     width: 100%;
@@ -182,7 +158,7 @@
     left: 0;
     background-color: var(--black);
     border-top: 5px solid var(--purple);
-    .mountains-wrapper {
+    &__wrapper {
       width: 100%;
       height: 100%;
       position: relative;
@@ -196,14 +172,14 @@
         bottom: 90%;
       }
     }
-    .back-left {
+    &--left {
       left: -5%;
     }
-    .back-right {
+    &--right {
       right: -5%;
     }
   }
-  .sunset-grid {
+  .sunset__grid {
     position: absolute;
     width: 100%;
     height: var(--sunset-horizon);
@@ -224,17 +200,16 @@
     height: var(--sunset-horizon);
     left: -3px;
     bottom: 0;
-    mask-image: url(../../images/square--black.svg);
-    mask-repeat: repeat;
-    mask-size: 50px;
-    .road-wrapper {
+    overflow: hidden;
+
+    &__wrapper {
       position: relative;
       height: 100%;
       width: 100%;
       top: 0;
       left: 0;
     }
-    .road-stripes {
+    &__stripes {
       position: absolute;
       height: 200%;
       width: 100%;
@@ -251,7 +226,7 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    .mountains-wrapper {
+    &__wrapper {
       width: 100%;
       height: 100%;
       position: relative;
@@ -260,16 +235,34 @@
       position: absolute;
       height: auto;
       width: 35%;
-      bottom: 80%;
-      // @include tablet-landscape-up {
-      //   bottom: 80%;
-      // }
+      bottom: 90%;
     }
-    .front-left {
-      left: -10%;
+    &--left {
+      left: -5%;
     }
-    .front-right {
-      right: -10%;
+    &--right {
+      right: -5%;
+    }
+  }
+  .miata {
+    position: absolute;
+    height: var(--sunset-horizon);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    &__wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      @include flex;
+    }
+    &__image {
+      width: auto;
+      height: 60%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 }
