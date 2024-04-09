@@ -97,40 +97,35 @@
       top: 0;
       margin: auto;
     }
-    &--5 {
+    &--4 {
       border-color: var(--cyan-rgb);
       z-index: 1;
-      transform: translate(-40px, -120px);
       .wiki__header {
         background-color: var(--cyan-rgb);
       }
     }
-    &--4 {
+    &--3 {
       border-color: var(--deep-sky-blue);
       z-index: 2;
-      transform: translate(-30px, -90px);
       .wiki__header {
         background-color: var(--deep-sky-blue);
       }
     }
-    &--3 {
+    &--2 {
       border-color: var(--blue);
       z-index: 3;
-      transform: translate(-20px, -60px);
       .wiki__header {
         background-color: var(--blue);
       }
     }
-    &--2 {
+    &--1 {
       border-color: var(--electric-indigo);
       z-index: 4;
-      transform: translate(-10px, -30px);
       .wiki__header {
         background-color: var(--electric-indigo);
       }
     }
-    &--1 {
-      // border-color: darken(#ca38ff, 30%);
+    &--0 {
       border-color: var(--electric-violet);
       z-index: 5;
       .wiki__header {
