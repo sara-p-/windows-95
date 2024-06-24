@@ -36,7 +36,7 @@ export default function animations() {
       trigger: maskScrollBox,
       scrub: 1,
     },
-    yPercent: -25,
+    yPercent: -35,
     ease: 'none',
   })
 
