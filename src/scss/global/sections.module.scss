@@ -1,45 +1,6 @@
 @use './variables.module.scss' as *;
 @use './mixins.module.scss' as *;
 
-.vaporwave-text {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  &__wrapper {
-    width: 100%;
-    max-width: var(--site-width-xl);
-    padding: 1rem;
-    height: 100%;
-    margin: auto;
-    @include tablet-landscape-up {
-      padding: 6rem;
-    }
-  }
-  &__image {
-    opacity: 0.5;
-    height: auto;
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 0;
-    @include tablet-landscape-up {
-      top: 0;
-    }
-  }
-}
-.title-mask {
-  width: 100%;
-  height: 100%;
-  mask-image: url(../../images/vaporwave-title1.svg);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  background-color: var(--black-light);
-}
-
 #wiki-section {
   // background-image: url(../../images/checkerboard.svg);
   // background-size: 250px;
@@ -148,152 +109,152 @@
   }
 }
 
-#section--4 {
-  overflow: hidden;
-  background-color: var(--black);
-  .stars {
-    @include absolute;
-    overflow: hidden;
-    &__wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      @include flex;
-    }
-    &__image {
-      width: 200%;
-      height: 200%;
-    }
-  }
+// #section--4 {
+//   overflow: hidden;
+//   background-color: var(--black);
+//   .stars {
+//     @include absolute;
+//     overflow: hidden;
+//     &__wrapper {
+//       width: 100%;
+//       height: 100%;
+//       position: relative;
+//       @include flex;
+//     }
+//     &__image {
+//       width: 200%;
+//       height: 200%;
+//     }
+//   }
 
-  .sun {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    &__image {
-      width: 20%;
-      height: auto;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 20%;
-      margin: auto;
-    }
-  }
-  .mountains-back {
-    position: absolute;
-    height: var(--sunset-horizon);
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: var(--black);
-    border-top: 5px solid var(--purple);
-    &__wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-    .mountain {
-      position: absolute;
-      height: auto;
-      width: 50%;
-      bottom: 90%;
-      @include tablet-landscape-up {
-        bottom: 90%;
-      }
-    }
-    &--left {
-      left: -5%;
-    }
-    &--right {
-      right: -5%;
-    }
-  }
-  .sunset__grid {
-    position: absolute;
-    width: 100%;
-    height: var(--sunset-horizon);
-    left: -3px;
-    bottom: 0;
-    background-image: url(../../images/ground-lines.svg);
-    background-size: 200%;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-color: var(--black);
-    @include tablet-landscape-up {
-      background-size: 105%;
-    }
-  }
-  .road {
-    position: absolute;
-    width: 100%;
-    height: var(--sunset-horizon);
-    left: -3px;
-    bottom: 0;
-    overflow: hidden;
+//   .sun {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     overflow: hidden;
+//     &__image {
+//       width: 20%;
+//       height: auto;
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       top: 20%;
+//       margin: auto;
+//     }
+//   }
+//   .mountains-back {
+//     position: absolute;
+//     height: var(--sunset-horizon);
+//     width: 100%;
+//     bottom: 0;
+//     left: 0;
+//     background-color: var(--black);
+//     border-top: 5px solid var(--purple);
+//     &__wrapper {
+//       width: 100%;
+//       height: 100%;
+//       position: relative;
+//     }
+//     .mountain {
+//       position: absolute;
+//       height: auto;
+//       width: 50%;
+//       bottom: 90%;
+//       @include tablet-landscape-up {
+//         bottom: 90%;
+//       }
+//     }
+//     &--left {
+//       left: -5%;
+//     }
+//     &--right {
+//       right: -5%;
+//     }
+//   }
+//   .sunset__grid {
+//     position: absolute;
+//     width: 100%;
+//     height: var(--sunset-horizon);
+//     left: -3px;
+//     bottom: 0;
+//     background-image: url(../../images/ground-lines.svg);
+//     background-size: 200%;
+//     background-position: top center;
+//     background-repeat: no-repeat;
+//     background-color: var(--black);
+//     @include tablet-landscape-up {
+//       background-size: 105%;
+//     }
+//   }
+//   .road {
+//     position: absolute;
+//     width: 100%;
+//     height: var(--sunset-horizon);
+//     left: -3px;
+//     bottom: 0;
+//     overflow: hidden;
 
-    &__wrapper {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-    }
-    &__stripes {
-      position: absolute;
-      height: 200%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background-image: url(../../images/road-line-background.svg);
-      background-size: 50px;
-      background-repeat: repeat;
-    }
-  }
-  .mountains-front {
-    position: absolute;
-    height: var(--sunset-horizon);
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    &__wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-    .mountain {
-      position: absolute;
-      height: auto;
-      width: 35%;
-      bottom: 90%;
-    }
-    &--left {
-      left: -5%;
-    }
-    &--right {
-      right: -5%;
-    }
-  }
-  .miata {
-    position: absolute;
-    height: var(--sunset-horizon);
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    &__wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      @include flex;
-    }
-    &__image {
-      width: auto;
-      height: 60%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-  }
-}
+//     &__wrapper {
+//       position: relative;
+//       height: 100%;
+//       width: 100%;
+//       top: 0;
+//       left: 0;
+//     }
+//     &__stripes {
+//       position: absolute;
+//       height: 200%;
+//       width: 100%;
+//       top: 0;
+//       left: 0;
+//       background-image: url(../../images/road-line-background.svg);
+//       background-size: 50px;
+//       background-repeat: repeat;
+//     }
+//   }
+//   .mountains-front {
+//     position: absolute;
+//     height: var(--sunset-horizon);
+//     width: 100%;
+//     bottom: 0;
+//     left: 0;
+//     &__wrapper {
+//       width: 100%;
+//       height: 100%;
+//       position: relative;
+//     }
+//     .mountain {
+//       position: absolute;
+//       height: auto;
+//       width: 35%;
+//       bottom: 90%;
+//     }
+//     &--left {
+//       left: -5%;
+//     }
+//     &--right {
+//       right: -5%;
+//     }
+//   }
+//   .miata {
+//     position: absolute;
+//     height: var(--sunset-horizon);
+//     width: 100%;
+//     bottom: 0;
+//     left: 0;
+//     &__wrapper {
+//       width: 100%;
+//       height: 100%;
+//       position: relative;
+//       @include flex;
+//     }
+//     &__image {
+//       width: auto;
+//       height: 60%;
+//       top: 0;
+//       right: 0;
+//       bottom: 0;
+//       left: 0;
+//     }
+//   }
+// }
