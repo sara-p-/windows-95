@@ -39,6 +39,13 @@
   color: var(--primary-color);
 }
 
+@mixin windows-border($width: 2px) {
+  border-top: $width solid var(--white);
+  border-left: $width solid var(--white);
+  border-bottom: $width solid var(--grey-dark);
+  border-right: $width solid var(--grey-dark);
+}
+
 // Utility
 
 @mixin image-cover() {
