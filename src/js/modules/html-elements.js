@@ -1,3 +1,5 @@
+import { onButtonClick } from '../modules/utils'
+
 export function createDialog({ id, text }, index) {
   const dialog = document.createElement('dialog')
   dialog.classList.add('dialog')
@@ -5,6 +7,14 @@ export function createDialog({ id, text }, index) {
   dialog.setAttribute('data-dialog-id', id)
   dialog.setAttribute('data-dialog-index', index)
   const imageUrl = new URL('/images/alert-shadow.svg', import.meta.url)
+
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('dialog__wrapper')
+
+  dialog.append(wrapper)
+
+  const header = document.createElement('div')
+
   dialog.innerHTML = `
         <div class="dialog__wrapper">
           <div class="dialog__header">
