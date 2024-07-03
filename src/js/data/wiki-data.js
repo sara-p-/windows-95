@@ -9,7 +9,7 @@ export const wikiData = [
   },
   {
     id: 2,
-    text: 'The surrounding subculture is sometimes associated with an ambiguous or satirical take on consumer capitalism[33] and pop culture, and tends to be characterized by a nostalgic or surrealist engagement with the popular entertainment, technology and advertising of previous decades.',
+    text: 'The surrounding subculture is sometimes associated with an ambiguous or satirical take on consumer capitalism and pop culture, and tends to be characterized by a nostalgic or surrealist engagement with the popular entertainment, technology and advertising of previous decades.',
   },
   {
     id: 3,

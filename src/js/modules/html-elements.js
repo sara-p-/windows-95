@@ -1,4 +1,5 @@
 import { wikiClickHandler } from './wiki-click'
+import { WIKI_TRANSITION_TIME } from '../data/constants'
 
 export function createDialog({ id, text }, index) {
   const dialog = document.createElement('dialog')
@@ -6,7 +7,7 @@ export function createDialog({ id, text }, index) {
   dialog.setAttribute('open', '')
   dialog.setAttribute('data-dialog-id', id)
   dialog.setAttribute('data-dialog-index', index)
-  dialog.setAttribute('data-dialog-active', 'inactive')
+  dialog.style.transition = `all ${WIKI_TRANSITION_TIME} ease-in-out`
   const imageUrl = new URL('/images/alert-shadow.svg', import.meta.url)
 
   const wrapper = document.createElement('div')
@@ -21,7 +22,7 @@ export function createDialog({ id, text }, index) {
 
   const title = document.createElement('h1')
   title.classList.add('dialog__title', 'h5')
-  title.innerHTML = `Vaporwave ${id}`
+  title.innerHTML = `Vaporwave ${id + 1}`
 
   header.append(title)
 

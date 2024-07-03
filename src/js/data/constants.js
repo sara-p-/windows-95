@@ -1,0 +1,1 @@
+export const WIKI_TRANSITION_TIME = 300
