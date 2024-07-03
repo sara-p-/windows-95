@@ -10,32 +10,40 @@ export default function wikiWindows() {
     wikiSection.append(createDialog(item, index))
   })
 
-  // On click of 'close' OR 'ok', delete the current item and remake it in the back. Change the data-dialog-index on the other items to move them up in the list
-  const closeButtons = document.querySelectorAll('.dialog__close, .dialog__ok')
-  let newWikiData = [...wikiData]
+  // // Function to change the indexes of the other dialogs
+  // let newWikiData = [...wikiData]
+  // // Mutation Observer to listen for a change the the dataset attribute
+  // let dialogNodes = document.querySelectorAll('dialog.dialog')
 
-  closeButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const activeDialog = e.target.closest('.dialog')
+  // function handleDatasetChange(mutationList, observer) {
+  //   for (const mutation of mutationList) {
+  //     if (
+  //       mutation.attributeName === 'data-dialog-active' &&
+  //       mutation.oldValue !== 'active'
+  //     ) {
+  //       console.log(mutation.oldValue)
+  //       const activeNode = mutation.target
+  //       newWikiData = getShuffledArray(newWikiData, activeNode)
+  //       // Update the DOM node dataset.id attributes
+  //       for (let i = 0; i < newWikiData.length - 1; i++) {
+  //         const itemId = newWikiData[i].id
+  //         const domItem = document.querySelector(
+  //           `dialog[data-dialog-id="${itemId}"]`
+  //         )
+  //         domItem.dataset.dialogIndex = i
+  //       }
+  //       activeNode.dataset.dialogActive = 'inactive'
+  //       // activeNode.style.top = 'initial'
+  //       // activeNode.style.zIndex = 'initial'
+  //       // activeNode.style.left = 'initial'
+  //       // console.log(newWikiData)
+  //     }
+  //   }
+  // }
 
-      // On click, remove the activedialog from the DOM and the newWikiData array. Then return the array with the removed item added to the end of the array.
-      newWikiData = getShuffledArray(newWikiData, activeDialog)
-      const lastItemIndex = newWikiData.length - 1
+  // const observer = new MutationObserver(handleDatasetChange)
 
-      // Create the new DOM node
-      wikiSection.append(
-        createDialog(newWikiData[lastItemIndex], lastItemIndex)
-      )
-      // Update the DOM node dataset.id attributes
-      for (let i = 0; i < newWikiData.length; i++) {
-        const itemId = newWikiData[i].id
-        const domItem = document.querySelector(
-          `dialog[data-dialog-id="${itemId}"]`
-        )
-        domItem.dataset.dialogIndex = i
-      }
-
-      console.log(newWikiData)
-    })
-  })
+  // dialogNodes.forEach((node) => {
+  //   observer.observe(node, { attributes: true, attributeOldValue: true })
+  // })
 }

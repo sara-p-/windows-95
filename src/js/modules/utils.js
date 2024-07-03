@@ -12,25 +12,6 @@ export function getShuffledArray(newArray, node) {
   const removedItem = newArray.splice(dialogIndex, 1)
   // 3. Add the clicked dialog back to the end of the newArray Array
   newArray = [...newArray, ...removedItem]
-  // 4. remove item from dom
-  node.remove()
 
   return newArray
-}
-
-export function onButtonClick() {
-  console.log('clicked')
-}
-
-// recreate React
-export function createNode(element, attributeObject) {
-  const ele = document.createElement(element)
-
-  if (attributeArray) {
-    Object.entries(attributeObject).forEach(([attr, value]) => {
-      ele.setAttribute(attr, value)
-    })
-  }
-
-  return ele
 }
