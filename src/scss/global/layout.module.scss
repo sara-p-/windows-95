@@ -21,16 +21,25 @@ body {
   width: auto;
   margin: 0;
   padding: 0;
-  background-image: var(--gradient-vaporwave2);
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
   cursor: url(../../images/cursor29.png), auto;
 }
 
 .main {
   position: relative;
   z-index: 0;
+}
+
+.screen {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black);
+  padding: 30px;
+  &__wrapper {
+    position: relative;
+    background-color: var(--teal);
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .section {
@@ -46,21 +55,21 @@ body {
   }
 }
 
-.wrapper {
-  width: 100%;
-  max-width: var(--site-width-xl);
-  // padding: var(--spacing-xxxl) var(--spacing-m);
-  padding: var(--spacing-xxxl) 24px;
-  @include tablet-landscape-up {
-  }
-  &:has(.content) {
-    @extend .wrapper;
-    display: block;
-    @include tablet-portrait-up {
-      @include flex;
-    }
-  }
-}
+// .wrapper {
+//   width: 100%;
+//   max-width: var(--site-width-xl);
+//   // padding: var(--spacing-xxxl) var(--spacing-m);
+//   padding: var(--spacing-xxxl) 24px;
+//   @include tablet-landscape-up {
+//   }
+//   &:has(.content) {
+//     @extend .wrapper;
+//     display: block;
+//     @include tablet-portrait-up {
+//       @include flex;
+//     }
+//   }
+// }
 
 .visually-hidden,
 .visually-hide-label,
