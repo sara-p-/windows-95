@@ -1,6 +1,21 @@
 @use './variables.module.scss' as *;
 @use './mixins.module.scss' as *;
 
+button {
+  cursor: url(../../images/cursor29.png), auto;
+  background-color: var(--windows-grey);
+  border-radius: 0;
+  line-height: 1;
+  @include windows-border;
+  &:hover {
+    @include windows-border-hover;
+  }
+  &.mouse-down {
+    @include windows-border-hover;
+    transform: translate(2px, 2px);
+  }
+}
+
 .buttons {
   width: 100%;
 }

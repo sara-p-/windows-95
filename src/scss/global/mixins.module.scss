@@ -46,6 +46,13 @@
   border-right: $width solid var(--grey-dark);
 }
 
+@mixin windows-border-hover($width: 2px) {
+  border-bottom: $width solid var(--white);
+  border-right: $width solid var(--white);
+  border-top: 3px solid var(--grey-dark);
+  border-left: 3px solid var(--grey-dark);
+}
+
 // Utility
 
 @mixin image-cover() {

@@ -61,13 +61,9 @@
   &__close {
     height: auto;
     padding: 0 2px;
-    border-radius: 0;
-    line-height: 1;
     font-size: 20px;
-    cursor: pointer;
-    @include windows-border;
     &:hover {
-      background-color: var(--windows-grey-hover);
+      @include windows-border;
     }
   }
   &__body {
@@ -120,19 +116,12 @@
   &__ok {
     width: 100%;
     max-width: 100px;
-    @include windows-border;
-    background-color: var(--windows-grey);
     padding: 1px;
-    cursor: pointer;
     @include tablet-landscape-up {
       width: auto;
       max-width: auto;
     }
-    &:hover {
-      background-color: var(--windows-grey-hover);
-    }
     .button-wrapper {
-      // padding: 8px;
       border: 1px dotted var(--grey-dark);
       @include tablet-landscape-up {
         padding: 4px 32px;

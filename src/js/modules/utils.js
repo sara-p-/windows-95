@@ -15,3 +15,13 @@ export function getShuffledArray(newArray, node) {
 
   return newArray
 }
+
+// Function to add a class to buttons on mouse down
+export function handleMouseDown(e) {
+  e.target.classList.add('mouse-down')
+}
+
+// Function to add a class to buttons on mouse down
+export function handleMouseUp(e) {
+  e.target.classList.remove('mouse-down')
+}

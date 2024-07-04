@@ -1,0 +1,9 @@
+@use '../global/variables.module.scss' as *;
+@use '../global/mixins.module.scss' as *;
+
+.cursor {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  z-index: 100;
+}

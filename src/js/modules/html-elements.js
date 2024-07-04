@@ -1,5 +1,6 @@
 import { wikiClickHandler } from './wiki-click'
 import { WIKI_TRANSITION_TIME } from '../data/constants'
+import { handleMouseDown, handleMouseUp } from './utils'
 
 export function createDialog({ id, text }, index) {
   const dialog = document.createElement('dialog')
@@ -29,6 +30,8 @@ export function createDialog({ id, text }, index) {
   const closeButton = document.createElement('button')
   closeButton.classList.add('dialog__close', 'icon', 'icon--x-mark')
   closeButton.innerHTML = `<span class="visually-hidden">Close window</span>`
+  closeButton.onmousedown = handleMouseDown
+  closeButton.onmouseup = handleMouseUp
   closeButton.onclick = wikiClickHandler
 
   header.append(closeButton)
