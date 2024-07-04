@@ -1,0 +1,27 @@
+@use '../global/variables.module.scss' as *;
+@use '../global/mixins.module.scss' as *;
+
+.footer {
+  background-color: var(--windows-grey);
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 3px;
+  border-top: 2px solid var(--white);
+  &__start {
+    @include windows-border;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    background-color: var(--windows-grey);
+    // padding: 1px;
+  }
+  &__logo {
+    width: 100%;
+    max-width: 25px;
+    height: auto;
+  }
+}

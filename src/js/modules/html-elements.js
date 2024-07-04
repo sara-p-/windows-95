@@ -22,7 +22,7 @@ export function createDialog({ id, text }, index) {
 
   const title = document.createElement('h1')
   title.classList.add('dialog__title', 'h5')
-  title.innerHTML = `Vaporwave ${id + 1}`
+  title.innerHTML = `Windows 95 - Part ${id + 1}`
 
   header.append(title)
 
