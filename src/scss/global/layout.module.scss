@@ -21,7 +21,6 @@ body {
   width: auto;
   margin: 0;
   padding: 0;
-  cursor: url(../../images/cursor29.png), auto;
 }
 
 .main {
@@ -29,16 +28,37 @@ body {
   z-index: 0;
 }
 
-.screen {
+.desktop {
   width: 100%;
   height: 100vh;
+  background-color: var(--desktop);
+  padding: 2.5rem;
+  cursor: none;
+}
+.screen {
+  width: 100%;
+  height: 100%;
   background-color: var(--black);
   padding: 30px;
+  // border-radius: 8px;
+  border-top: 30px solid var(--desktop-highlight);
+  border-right: 30px solid var(--desktop-highlight);
+  border-bottom: 30px solid var(--desktop-shadow);
+  border-left: 30px solid var(--desktop-shadow);
+  // border-width: 50px;
+  // border-style: solid;
+  // border-image: linear-gradient(
+  //     to bottom,
+  //     var(--desktop-highlight),
+  //     var(--desktop-shadow)
+  //   )
+  //   1 100%;
   &__wrapper {
     position: relative;
     background-color: var(--teal);
     height: 100%;
     width: 100%;
+    cursor: url(../../images/cursor29.png), auto;
   }
 }
 

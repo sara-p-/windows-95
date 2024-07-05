@@ -4,7 +4,7 @@ import { getShuffledArray } from './utils'
 
 export default function wikiWindows() {
   // On load, create the wiki windows
-  const startButton = document.querySelector('button.footer__start')
+  const startButton = document.querySelector('button.start-button')
   const wikiSection = document.querySelector('.wiki-section')
 
   startButton.addEventListener('click', () => {

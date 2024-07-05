@@ -10,7 +10,10 @@
   left: 0;
   padding: 3px;
   border-top: 2px solid var(--white);
-  &__start {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .start-button {
     @include windows-border;
     font-size: 20px;
     font-weight: 600;
@@ -20,9 +23,19 @@
     display: flex;
     gap: 3px;
   }
-  &__logo {
+  .microsoft-logo {
     width: 100%;
     max-width: 25px;
     height: auto;
+  }
+  .clock {
+    @include windows-border-hover;
+    padding: 5px 10px;
+    .time {
+      margin-bottom: 0;
+      line-height: 1;
+      font-size: 20px;
+      font-weight: 400;
+    }
   }
 }
