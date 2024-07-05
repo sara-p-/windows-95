@@ -20,20 +20,27 @@ button {
   width: 100%;
 }
 
-.button {
-  @include clear-button;
-  &--contact {
-    @extend .button;
-    @include heading-style(6rem);
-    &.hover,
-    &:hover,
-    &:focus {
-      background: transparent;
-      color: var(--accent-color);
-    }
+.windows-button {
+  width: 100%;
+  max-width: 100px;
+  padding: 1px;
+  position: relative;
+  @include tablet-landscape-up {
+    width: auto;
+    max-width: initial;
   }
-  &--clear {
-    @include clear-button;
-    padding: 0;
+
+  .button-wrapper {
+    font-weight: 500;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: 1px dotted var(--grey-dark);
+    // margin: 1px;
+    display: block;
+    @include tablet-landscape-up {
+      padding: 2px 32px;
+    }
   }
 }
