@@ -1,5 +1,5 @@
 import { wikiData } from '../data/wiki-data'
-import { createDialog } from './html-elements'
+import { wikiDialog } from '../components/wiki-dialog'
 import { getShuffledArray } from './utils'
 
 export default function wikiWindows() {
@@ -26,7 +26,7 @@ export default function wikiWindows() {
     } else {
       wikiData.forEach((item, index) => {
         setTimeout(() => {
-          wikiSection.append(createDialog(item, index))
+          wikiSection.append(wikiDialog(item, index))
         }, (index + 1) * 100)
       })
       activeWikis = true

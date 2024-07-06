@@ -1,7 +1,7 @@
 import wikiWindows from './modules/wiki-windows'
 import buttonEvents from './modules/button-events'
-import clock from './modules/clock'
+import clockEvent from './modules/clock-event'
 
 wikiWindows()
 buttonEvents()
-clock()
+clockEvent()

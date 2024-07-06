@@ -40,19 +40,10 @@ body {
   height: 100%;
   background-color: var(--black);
   padding: 30px;
-  // border-radius: 8px;
   border-top: 30px solid var(--desktop-highlight);
   border-right: 30px solid var(--desktop-highlight);
   border-bottom: 30px solid var(--desktop-shadow);
   border-left: 30px solid var(--desktop-shadow);
-  // border-width: 50px;
-  // border-style: solid;
-  // border-image: linear-gradient(
-  //     to bottom,
-  //     var(--desktop-highlight),
-  //     var(--desktop-shadow)
-  //   )
-  //   1 100%;
   &__wrapper {
     position: relative;
     background-color: var(--teal);

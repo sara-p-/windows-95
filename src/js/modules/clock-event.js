@@ -1,4 +1,4 @@
-export default function clock() {
+export default function clockEvent() {
   const timeText = document.querySelector('.time')
   const newDate = new Date()
   const newTime = newDate.toLocaleString('en-US', {
