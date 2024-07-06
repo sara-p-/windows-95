@@ -65,7 +65,7 @@ export function createDialog({ id, text }, index) {
   body.append(buttonsBox)
 
   const okButton = document.createElement('button')
-  okButton.classList.add('dialog__ok')
+  okButton.classList.add('dialog__ok', 'windows-button')
   okButton.onclick = wikiClickHandler
   okButton.onmousedown = handleMouseDown
   okButton.onmouseup = handleMouseUp

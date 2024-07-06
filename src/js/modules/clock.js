@@ -10,5 +10,5 @@ export default function clock() {
 
   setInterval(() => {
     timeText.innerHTML = newTime
-  }, 60000)
+  }, 1000)
 }

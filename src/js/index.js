@@ -3,5 +3,5 @@ import buttonEvents from './modules/button-events'
 import clock from './modules/clock'
 
 wikiWindows()
-// buttonEvents()
+buttonEvents()
 clock()

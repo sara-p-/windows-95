@@ -44,3 +44,12 @@ button {
     }
   }
 }
+
+.close-button {
+  height: auto;
+  padding: 0 2px;
+  font-size: 20px;
+  &:hover {
+    @include windows-border;
+  }
+}

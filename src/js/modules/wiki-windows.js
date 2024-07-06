@@ -7,11 +7,29 @@ export default function wikiWindows() {
   const startButton = document.querySelector('button.start-button')
   const wikiSection = document.querySelector('.wiki-section')
 
+  let activeWikis = false
+
   startButton.addEventListener('click', () => {
-    wikiData.forEach((item, index) => {
-      setTimeout(() => {
-        wikiSection.append(createDialog(item, index))
-      }, (index + 1) * 100)
-    })
+    if (activeWikis) {
+      // Delete the nodes in the order they appear on the screen
+      let wikiNodes = document.querySelectorAll('dialog.dialog')
+      wikiNodes.forEach((node, index) => {
+        const toDelete = document.querySelector(
+          `dialog[data-dialog-index="${index}"]`
+        )
+        setTimeout(() => {
+          toDelete.remove()
+        }, (index + 1) * 100)
+      })
+      activeWikis = false
+      wikiNodes = []
+    } else {
+      wikiData.forEach((item, index) => {
+        setTimeout(() => {
+          wikiSection.append(createDialog(item, index))
+        }, (index + 1) * 100)
+      })
+      activeWikis = true
+    }
   })
 }
