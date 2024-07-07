@@ -26,16 +26,28 @@
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
   font-family: sans-serif;
   font-weight: 300;
+  margin: auto 16px;
+  @include tablet-landscape-up {
+    margin: auto;
+  }
   &__wrapper {
     width: 100%;
-    max-width: 500px;
-    min-height: 250px;
+    // max-width: 500px;
+    // min-height: 250px;
     position: relative;
     display: block;
     @include windows-border;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    height: 275px;
     @include tablet-landscape-up {
-      display: flex;
-      flex-direction: column;
+      max-width: 500px;
+      height: 275px;
+    }
+    @include desktop-up {
+    }
+    @include big-desktop-up {
     }
   }
   &__header {
@@ -54,15 +66,15 @@
     padding-left: 7px;
   }
   &__body {
-    padding: 8px;
+    padding: 16px;
     background-color: var(--windows-grey);
     display: block;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     @include tablet-landscape-up {
       padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
   }
   &__content {
@@ -87,9 +99,11 @@
   &__text {
     font-weight: 300;
     line-height: 1.25;
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 0;
+    margin-left: 16px;
     @include tablet-landscape-up {
+      font-size: 14px;
       margin-left: 24px;
     }
   }
@@ -124,20 +138,36 @@
 [data-dialog-index='1'] {
   z-index: 5;
   top: -20px;
-  left: -20px;
+  left: 0;
+  pointer-events: none;
+  @include tablet-landscape-up {
+    left: -20px;
+  }
 }
 [data-dialog-index='2'] {
   z-index: 4;
   top: -40px;
-  left: -40px;
+  left: 0;
+  pointer-events: none;
+  @include tablet-landscape-up {
+    left: -40px;
+  }
 }
 [data-dialog-index='3'] {
   z-index: 3;
   top: -60px;
-  left: -60px;
+  left: 0;
+  pointer-events: none;
+  @include tablet-landscape-up {
+    left: -60px;
+  }
 }
 [data-dialog-index='4'] {
   z-index: 2;
   top: -80px;
-  left: -80px;
+  left: 0;
+  pointer-events: none;
+  @include tablet-landscape-up {
+    left: -80px;
+  }
 }

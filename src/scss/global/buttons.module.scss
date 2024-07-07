@@ -21,25 +21,29 @@ button {
 }
 
 .windows-button {
-  width: 100%;
-  max-width: 100px;
+  width: auto;
+  // max-width: 200px;
   padding: 1px;
   position: relative;
   @include tablet-landscape-up {
     width: auto;
     max-width: initial;
+    width: 100%;
+    max-width: 100px;
   }
 
   .button-wrapper {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 100%;
     height: 100%;
     pointer-events: none;
     border: 1px dotted var(--grey-dark);
     // margin: 1px;
+    padding: 2px 48px;
     display: block;
     @include tablet-landscape-up {
+      font-size: 1rem;
       padding: 2px 32px;
     }
   }
@@ -48,8 +52,11 @@ button {
 .close-button {
   height: auto;
   padding: 0 2px;
-  font-size: 20px;
+  font-size: 1.6rem;
   &:hover {
     @include windows-border;
+  }
+  @include tablet-landscape-up {
+    font-size: 20px;
   }
 }

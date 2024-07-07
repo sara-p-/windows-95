@@ -32,18 +32,35 @@ body {
   width: 100%;
   height: 100vh;
   background-color: var(--desktop);
-  padding: 2.5rem;
-  cursor: none;
+  padding: 0;
+  @include tablet-landscape-up {
+    // padding: 2rem;
+  }
+  @include desktop-up {
+    padding: 3rem 6rem;
+  }
+  @include big-desktop-up {
+    padding: 4rem 8rem;
+  }
 }
 .screen {
   width: 100%;
   height: 100%;
   background-color: var(--black);
-  padding: 30px;
-  border-top: 30px solid var(--desktop-highlight);
-  border-right: 30px solid var(--desktop-highlight);
-  border-bottom: 30px solid var(--desktop-shadow);
-  border-left: 30px solid var(--desktop-shadow);
+  padding: 0;
+  border: none;
+  @include tablet-landscape-up {
+    // @include screen-border(1rem);
+    // padding: 1rem;
+  }
+  @include desktop-up {
+    @include screen-border(1.5rem);
+    padding: 1.5rem;
+  }
+  @include big-desktop-up {
+    @include screen-border;
+    padding: 2rem;
+  }
   &__wrapper {
     position: relative;
     background-color: var(--teal);
@@ -65,22 +82,6 @@ body {
     height: 100%;
   }
 }
-
-// .wrapper {
-//   width: 100%;
-//   max-width: var(--site-width-xl);
-//   // padding: var(--spacing-xxxl) var(--spacing-m);
-//   padding: var(--spacing-xxxl) 24px;
-//   @include tablet-landscape-up {
-//   }
-//   &:has(.content) {
-//     @extend .wrapper;
-//     display: block;
-//     @include tablet-portrait-up {
-//       @include flex;
-//     }
-//   }
-// }
 
 .visually-hidden,
 .visually-hide-label,

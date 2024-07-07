@@ -39,6 +39,13 @@
   color: var(--primary-color);
 }
 
+@mixin screen-border($width: 3rem) {
+  border-top: $width solid var(--desktop-highlight);
+  border-right: $width solid var(--desktop-highlight);
+  border-bottom: $width solid var(--desktop-shadow);
+  border-left: $width solid var(--desktop-shadow);
+}
+
 @mixin windows-border($width: 2px) {
   border-top: $width solid var(--white);
   border-left: $width solid var(--white);
