@@ -35,37 +35,4 @@ export function wikiClickHandler(e) {
   setTimeout(() => {
     activeDialog.style = ''
   }, WIKI_TRANSITION_TIME * 3)
-
-  // // 1. Move the clicked card down below the card deck
-  // const dialogAnimation = new Promise((resolve) => {
-  //   activeDialog.style.top = `${dialogHeight * 2}px`
-  //   activeDialog.style.left = `-80px`
-  //   resolve(activeDialog)
-  // })
-
-  // dialogAnimation
-  //   .then(() => {
-  //     setTimeout(() => {
-  //       activeDialog.style.zIndex = 1
-  //       activeDialog.style.top = `-80px`
-  //     }, WIKI_TRANSITION_TIME)
-  //     // return dialog
-  //   })
-  //   .then(() => {
-  //     setTimeout(() => {
-  //       // On click, move the array element that is tied to the active node element to the end of the newWikiData array
-  //       newWikiData = getShuffledArray(newWikiData, activeDialog)
-  //       // Update the DOM node dataset.id attributes
-  //       for (let i = 0; i < newWikiData.length; i++) {
-  //         const itemId = newWikiData[i].id
-  //         const domItem = document.querySelector(`[data-dialog-id="${itemId}"]`)
-  //         domItem.dataset.dialogIndex = i
-  //       }
-  //     }, WIKI_TRANSITION_TIME * 2)
-  //   })
-  //   .then(() => {
-  //     setTimeout(() => {
-  //       activeDialog.style = ''
-  //     }, WIKI_TRANSITION_TIME * 3)
-  //   })
 }

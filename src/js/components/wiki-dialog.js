@@ -1,4 +1,4 @@
-import { wikiClickHandler } from '../modules/wiki-click-handler'
+import { wikiClickHandlerSubdued } from '../modules/wiki-click-handler-subdued'
 import { WIKI_TRANSITION_TIME } from '../data/constants'
 import { handleMouseDown, handleMouseUp } from '../modules/utils'
 
@@ -37,7 +37,7 @@ export function wikiDialog({ id, text }, index) {
   closeButton.innerHTML = `<span class="visually-hidden">Close window</span>`
   closeButton.onmousedown = handleMouseDown
   closeButton.onmouseup = handleMouseUp
-  closeButton.onclick = wikiClickHandler
+  closeButton.onclick = wikiClickHandlerSubdued
 
   header.append(closeButton)
 
@@ -71,7 +71,7 @@ export function wikiDialog({ id, text }, index) {
 
   const okButton = document.createElement('button')
   okButton.classList.add('dialog__ok', 'windows-button')
-  okButton.onclick = wikiClickHandler
+  okButton.onclick = wikiClickHandlerSubdued
   okButton.onmousedown = handleMouseDown
   okButton.onmouseup = handleMouseUp
   okButton.innerHTML = `<div class="button-wrapper">OK</div>`
