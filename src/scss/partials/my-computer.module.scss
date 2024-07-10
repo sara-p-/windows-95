@@ -1,0 +1,8 @@
+@use '../global/variables.module.scss' as *;
+@use '../global/mixins.module.scss' as *;
+
+button.my-computer {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}

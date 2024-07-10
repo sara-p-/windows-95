@@ -1,14 +1,15 @@
 export default function clockEvent() {
   const timeText = document.querySelector('.time')
-  const newDate = new Date()
-  const newTime = newDate.toLocaleString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  })
-  timeText.innerHTML = newTime
+  let newTime
 
   setInterval(() => {
+    const newDate = new Date()
+    newTime = newDate.toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    })
     timeText.innerHTML = newTime
+    console.log(newTime)
   }, 1000)
 }

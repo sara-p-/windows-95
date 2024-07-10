@@ -1,5 +1,5 @@
 import { wikiData } from '../data/wiki-data'
-import { getShuffledArray, wikiAnimation } from './utils'
+import { getShuffledArray, wikiAnimation } from '../modules/utils'
 import { WIKI_TRANSITION_TIME } from '../data/constants'
 let newWikiData = [...wikiData]
 

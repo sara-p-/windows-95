@@ -1,4 +1,4 @@
-import { wikiClickHandlerSubdued } from '../modules/wiki-click-handler-subdued'
+import { wikiClickHandlerSubdued } from '../handlers/wiki-click-handler-subdued'
 import { WIKI_TRANSITION_TIME } from '../data/constants'
 import { handleMouseDown, handleMouseUp } from '../modules/utils'
 
