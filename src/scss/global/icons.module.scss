@@ -47,4 +47,11 @@
       content: '\f00d';
     }
   }
+  &--window-maximize {
+    @extend .icon;
+    &:after {
+      content: '\f2d0';
+      font: var(--fa-font-regular);
+    }
+  }
 }

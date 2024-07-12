@@ -10,6 +10,5 @@ export default function clockEvent() {
       hour12: true,
     })
     timeText.innerHTML = newTime
-    console.log(newTime)
   }, 1000)
 }
